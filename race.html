@@ -1,0 +1,33 @@
+<script type="text/javascript">
+
+	var finishLine = 100;
+	var rabbit, turtle, human;
+
+	function Animal(name, speed, focus){
+		this.name = name;
+		this.speed = speed;
+		this.focus = focus;
+		this.position = 0;
+		this.run = function() {
+			if (Math.random() * 10 < this.focus){
+				this.position = this.position + this.speed;
+			}
+			return this.position;
+		} 
+	};
+
+	rabbit = new Animal("Marko", 4, 2);
+	turtle = new Animal("Lance", 1, 10);
+	human = new Animal("Kevin", 3, 6);
+
+	while (rabbit.position || turtle.position || human.position < finishLine) {
+		return rabbit.position = finishLine - rabbit.position && turtle.position = finishLine - turtle.position && human.position = finishLine - human.position;
+			rabbit.run();
+			turtle.run();
+			human.run();
+	} else {
+		var Animal = rabbit, turtle, human;
+		alert(Animal.name + "has won the race!")
+	};
+
+</script>
