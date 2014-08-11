@@ -10,3 +10,5 @@ Who will win the race?
 I added another function that included a while loop along with if/else conditionals that translated the random outcome of the game.
 
 Kevin Trottier
+
+some collaboration with Vincent Lee
