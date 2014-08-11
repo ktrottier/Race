@@ -1,0 +1,43 @@
+<html>
+<script>
+alert("Hello, let's play a race between a rabbit and a turtle!");
+
+	function Animal(name, speed, focus){
+		this.name = name;
+		this.speed = speed;
+		this.focus = focus;
+		this.position = 0;
+		this.run = function() {
+			if (Math.random() * 10 < this.focus){
+				this.position = this.position + this.speed;
+			}
+			return this.position;
+		}
+	}
+
+	function race(theRabbit, theTurtle, finishLine){
+	alert("The race has begun!");
+	while (theRabbit < finishLine && theTurtle < finishLine) {
+			theRabbit.run();
+			theTurtle.run();
+			alert("rabbit" + theRabbit.position);
+			alert("turtle" + theTurtle.position);
+	}
+	if ((theRabbit.position == theTurtle.position) == finishLine) {
+		alert("The race has ended in a tie");
+	}
+	else if ((theRabbit.position > theTurtle.position) >= finishLine){
+		alert("The race has ended, " + theRabbit.name + " the rabbit has won the race!");
+	}
+	else {
+		alert("The race has ended, " + theTurtle.name + " the turtle has won the race!");
+	}
+}
+
+rabbit = new Animal("Marko", 4, 2);
+turtle = new Animal("Lance", 1, 10);
+race(rabbit, turtle, 100);
+
+
+</script>
+</html>
